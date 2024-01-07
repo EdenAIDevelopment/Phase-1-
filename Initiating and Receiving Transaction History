@@ -1,0 +1,26 @@
+class EdenAI:
+    def __init__(self):
+        self.transactions = []
+
+    def initiate_transaction(self, amount, sender, recipient):
+        transaction = {"amount": amount, "sender": sender, "recipient": recipient}
+        self.transactions.append(transaction)
+        return transaction
+
+    def get_transaction_history(self):
+        return self.transactions
+
+
+# Example Usage
+eden_ai_instance = EdenAI()
+
+# Initiate a transaction
+transaction1 = eden_ai_instance.initiate_transaction(100, "UserA", "UserB")
+
+# Get transaction history
+history = eden_ai_instance.get_transaction_history()
+
+# Print transaction history
+print("Transaction History:")
+for index, transaction in enumerate(history, start=1):
+    print(f"{index}. Amount: ${transaction['amount']} | Sender: {transaction['sender']} | Recipient: {transaction['recipient']}")
